@@ -1,0 +1,1 @@
+"""LabhSetu backend application package."""
