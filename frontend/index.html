@@ -1,17 +1,481 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LabhSetu - Find the benefits meant for you</title>
+    <meta name="theme-color" content="#102f29">
+
+    <title>LabhSetu | Find Benefits Meant For You</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
+    <div class="announcement">
+        ✦ Empowering citizens through smarter benefit discovery
+        <span>Explore opportunities →</span>
+    </div>
+
+    <nav class="navbar">
+        <a href="#home" class="brand">
+            <span class="brand-icon">L</span>
+            <span>Labh<span class="brand-green">Setu</span><small>BENEFITS FOR EVERYONE</small></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home" class="active">Home</a>
+            <a href="#discover">Discover</a>
+            <a href="#features">Features</a>
+            <a href="#readiness">Readiness</a>
+            <a href="#family">Family</a>
+            <a href="#about">About</a>
+            <a href="#discover" class="nav-cta">Get Started ↗</a>
+        </div>
+    </nav>
+
     <main>
-        <h1>LabhSetu</h1>
-        <p>Find the benefits meant for you.</p>
-        <p id="status">Loading...</p>
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+
+            <div class="hero-content reveal">
+                <div class="eyebrow">
+                    <span class="pulse"></span>
+                    YOUR PERSONAL BENEFIT DISCOVERY PLATFORM
+                </div>
+
+                <h1>
+                    Government benefits
+                    <span>made for you.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Don't miss the benefits you deserve.
+                    Discover government schemes, understand eligibility
+                    and take your next step with confidence.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#discover" class="btn btn-primary">
+                        Discover Schemes <span>→</span>
+                    </a>
+                    <a href="#features" class="btn btn-outline">
+                        Explore Features
+                    </a>
+                </div>
+
+                <div class="hero-trust">
+                    <span>✓ Simple to use</span>
+                    <span>✓ Citizen focused</span>
+                    <span>✓ Source aware</span>
+                </div>
+            </div>
+
+            <!-- CSS HERO ILLUSTRATION -->
+            <div class="hero-visual reveal">
+
+                <div class="orb orb-one"></div>
+                <div class="orb orb-two"></div>
+
+                <div class="floating-card card-top">
+                    <span>✦</span>
+                    <div>
+                        <strong>Smart discovery</strong>
+                        <small>Benefits that match your needs</small>
+                    </div>
+                </div>
+
+                <div class="main-illustration">
+                    <div class="illustration-circle">
+                        <div class="illustration-inner">
+                            <span class="illustration-icon">🏛️</span>
+                            <h3>Your Benefits Hub</h3>
+                            <p>One platform. More possibilities.</p>
+                            <div class="mini-tags">
+                                <span>Education</span>
+                                <span>Welfare</span>
+                                <span>Employment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="floating-card card-bottom">
+                    <span>✓</span>
+                    <div>
+                        <strong>Know your eligibility</strong>
+                        <small>Understand before you apply</small>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- QUICK CATEGORY -->
+        <section class="category-strip">
+            <div class="category-heading">
+                <span>EXPLORE BY NEED</span>
+                <h2>Benefits for every journey.</h2>
+            </div>
+
+            <div class="category-grid">
+                <a href="#discover" class="category-item">
+                    <span>🎓</span>
+                    <strong>Students</strong>
+                    <small>Scholarships & education</small>
+                </a>
+
+                <a href="#discover" class="category-item">
+                    <span>🌾</span>
+                    <strong>Farmers</strong>
+                    <small>Agriculture & support</small>
+                </a>
+
+                <a href="#discover" class="category-item">
+                    <span>💼</span>
+                    <strong>Job seekers</strong>
+                    <small>Skills & employment</small>
+                </a>
+
+                <a href="#family" class="category-item">
+                    <span>🏠</span>
+                    <strong>Families</strong>
+                    <small>Family welfare</small>
+                </a>
+
+                <a href="#discover" class="category-item">
+                    <span>👩</span>
+                    <strong>Women</strong>
+                    <small>Empowerment & support</small>
+                </a>
+            </div>
+        </section>
+
+        <!-- DISCOVER -->
+        <section class="section discover-section" id="discover">
+
+            <div class="section-heading reveal">
+                <div>
+                    <span class="section-label">01 / DISCOVER</span>
+                    <h2>Find what you're <span>eligible for.</span></h2>
+                    <p>Start exploring government benefits based on your needs.</p>
+                </div>
+            </div>
+
+            <div class="search-panel reveal">
+                <div class="search-field">
+                    <span>⌕</span>
+                    <input type="text" id="schemeSearch"
+                    placeholder="Search schemes, scholarships, subsidies...">
+                </div>
+
+                <select id="categoryFilter">
+                    <option value="">All categories</option>
+                    <option value="Education">Education</option>
+                    <option value="Agriculture">Agriculture</option>
+                    <option value="Employment">Employment</option>
+                    <option value="Women">Women</option>
+                    <option value="Welfare">Welfare</option>
+                </select>
+
+                <button class="btn btn-primary" id="searchBtn">
+                    Search →
+                </button>
+            </div>
+
+            <div class="status-note">
+                <span>●</span> Scheme results will appear here when the
+                scheme database API is connected.
+            </div>
+
+            <div class="empty-results" id="schemeResults">
+                <div class="empty-icon">🔎</div>
+                <h3>Your next opportunity starts here.</h3>
+                <p>Connect the backend to discover verified scheme matches.</p>
+            </div>
+
+        </section>
+
+        <!-- FEATURES -->
+        <section class="section features-section" id="features">
+
+            <div class="section-heading center reveal">
+                <span class="section-label">02 / SMART TOOLS</span>
+                <h2>More than a scheme <span>search engine.</span></h2>
+                <p>Everything you need to move from information to action.</p>
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature-card feature-green reveal">
+                    <div class="feature-icon">📄</div>
+                    <span class="feature-number">01</span>
+                    <h3>Document Scheme Search</h3>
+                    <p>Upload supported documents to discover potentially matching schemes.</p>
+                    <a href="#documents">Explore tool →</a>
+                </article>
+
+                <article class="feature-card feature-purple reveal">
+                    <div class="feature-icon">🛡️</div>
+                    <span class="feature-number">02</span>
+                    <h3>Scheme Verification</h3>
+                    <p>Check scheme details and compare them with official sources.</p>
+                    <a href="#verify">Explore tool →</a>
+                </article>
+
+                <article class="feature-card feature-orange reveal">
+                    <div class="feature-icon">💰</div>
+                    <span class="feature-number">03</span>
+                    <h3>Benefit Loss Calculator</h3>
+                    <p>Estimate potential benefits you may have missed.</p>
+                    <a href="#calculator">Explore tool →</a>
+                </article>
+
+                <article class="feature-card feature-blue reveal">
+                    <div class="feature-icon">🌐</div>
+                    <span class="feature-number">04</span>
+                    <h3>Fake Website Detector</h3>
+                    <p>Inspect website information and identify possible warning signs.</p>
+                    <a href="#verify">Explore tool →</a>
+                </article>
+
+                <article class="feature-card feature-pink reveal">
+                    <div class="feature-icon">🌍</div>
+                    <span class="feature-number">05</span>
+                    <h3>Notification Translator</h3>
+                    <p>Understand complicated government notifications in simple language.</p>
+                    <a href="#translator">Explore tool →</a>
+                </article>
+
+                <article class="feature-card feature-teal reveal">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <span class="feature-number">06</span>
+                    <h3>Family Benefits</h3>
+                    <p>Explore potential benefits for different family members.</p>
+                    <a href="#family">Explore tool →</a>
+                </article>
+
+                <article class="feature-card feature-yellow reveal">
+                    <div class="feature-icon">📋</div>
+                    <span class="feature-number">07</span>
+                    <h3>Application Readiness</h3>
+                    <p>Prepare a checklist of required documents before applying.</p>
+                    <a href="#readiness">Explore tool →</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- DOCUMENTS -->
+        <section class="section split-section" id="documents">
+            <div class="split-content reveal">
+                <span class="section-label">03 / DOCUMENT INTELLIGENCE</span>
+                <h2>Let your documents help you <span>discover.</span></h2>
+                <p>Upload a supported document and prepare to find schemes that may match your information.</p>
+                <div class="info-chip">Backend integration required</div>
+            </div>
+
+            <div class="tool-box reveal">
+                <div class="upload-icon">📂</div>
+                <h3>Document discovery</h3>
+                <p>PDF, JPG and PNG · Maximum 5 MB</p>
+                <input type="file" id="documentInput"
+                accept=".pdf,.jpg,.jpeg,.png">
+                <button class="btn btn-primary" id="uploadBtn">
+                    Choose Document
+                </button>
+                <p id="fileStatus" class="tool-status">No document selected</p>
+            </div>
+        </section>
+
+        <!-- VERIFICATION -->
+        <section class="section verify-section" id="verify">
+            <div class="section-heading reveal">
+                <span class="section-label">04 / DIGITAL SAFETY</span>
+                <h2>Verify before you <span>trust.</span></h2>
+                <p>Check a scheme name or website URL before sharing personal information.</p>
+            </div>
+
+            <div class="verification-grid">
+                <div class="tool-box reveal">
+                    <span class="tool-emoji">🏛️</span>
+                    <h3>Scheme verification</h3>
+                    <p>Enter a scheme name to prepare a verification request.</p>
+                    <input type="text" id="schemeVerifyInput"
+                    placeholder="Enter scheme name">
+                    <button class="btn btn-primary" id="verifySchemeBtn">
+                        Check scheme
+                    </button>
+                    <p class="tool-status" id="schemeVerifyStatus">Awaiting backend integration</p>
+                </div>
+
+                <div class="tool-box reveal">
+                    <span class="tool-emoji">🔐</span>
+                    <h3>Website safety check</h3>
+                    <p>Enter a website address to check its source information.</p>
+                    <input type="url" id="websiteInput"
+                    placeholder="https://example.com">
+                    <button class="btn btn-primary" id="verifyWebsiteBtn">
+                        Check website
+                    </button>
+                    <p class="tool-status" id="websiteStatus">Awaiting backend integration</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALCULATOR -->
+        <section class="section calculator-section" id="calculator">
+            <div class="split-content reveal">
+                <span class="section-label">05 / BENEFIT ESTIMATOR</span>
+                <h2>Discover the benefits you might have <span>missed.</span></h2>
+                <p>Estimate potential missed benefits using scheme information and an eligible period.</p>
+                <div class="info-chip">Estimates are not confirmed entitlements</div>
+            </div>
+
+            <div class="tool-box reveal">
+                <h3>Benefit estimator</h3>
+                <label>Eligible benefit amount (₹ per month)</label>
+                <input type="number" id="benefitAmount" min="0" placeholder="Example: 2000">
+
+                <label>Number of months</label>
+                <input type="number" id="benefitMonths" min="1" max="120" placeholder="Example: 6">
+
+                <button class="btn btn-primary" id="calculateBtn">
+                    Estimate benefits →
+                </button>
+
+                <div class="calculation-result" id="calculationResult">
+                    Your estimate will appear here.
+                </div>
+            </div>
+        </section>
+
+        <!-- TRANSLATOR -->
+        <section class="section translator-section" id="translator">
+            <div class="section-heading reveal">
+                <span class="section-label">06 / LANGUAGE ACCESS</span>
+                <h2>Government language, <span>made simple.</span></h2>
+                <p>Prepare government notifications for translation and simplified explanation.</p>
+            </div>
+
+            <div class="tool-box translator-box reveal">
+                <label>Paste notification text</label>
+                <textarea id="notificationText"
+                placeholder="Paste your government notification here..."></textarea>
+
+                <label>Choose preferred language</label>
+                <select id="languageSelect">
+                    <option>Kannada</option>
+                    <option>English</option>
+                    <option>Hindi</option>
+                    <option>Telugu</option>
+                    <option>Tamil</option>
+                    <option>Malayalam</option>
+                    <option>Marathi</option>
+                    <option>Bengali</option>
+                </select>
+
+                <button class="btn btn-primary" id="translateBtn">
+                    Simplify notification →
+                </button>
+                <p class="tool-status" id="translationStatus">AI translation awaiting backend integration</p>
+            </div>
+        </section>
+
+        <!-- FAMILY -->
+        <section class="section family-section" id="family">
+            <div class="split-content reveal">
+                <span class="section-label">07 / FAMILY DISCOVERY</span>
+                <h2>One family. <span>Many possibilities.</span></h2>
+                <p>Explore government benefits that may match different members of your household.</p>
+                <a href="#readiness" class="btn btn-primary">Get started →</a>
+            </div>
+
+            <div class="family-art reveal">
+                <div class="family-circle">👨‍👩‍👧‍👦</div>
+                <div class="family-bubble bubble-a">🎓 Education</div>
+                <div class="family-bubble bubble-b">🏥 Healthcare</div>
+                <div class="family-bubble bubble-c">💼 Employment</div>
+            </div>
+        </section>
+
+        <!-- READINESS -->
+        <section class="section readiness-section" id="readiness">
+            <div class="section-heading reveal">
+                <span class="section-label">08 / APPLICATION PREPARATION</span>
+                <h2>Be ready before you <span>apply.</span></h2>
+                <p>Build a personal document checklist. This is a local demo checklist, not an official document verification.</p>
+            </div>
+
+            <div class="tool-box checklist-box reveal">
+                <h3>Your document checklist</h3>
+
+                <label class="check-row">
+                    <input type="checkbox" class="ready-check"> Identity proof
+                </label>
+                <label class="check-row">
+                    <input type="checkbox" class="ready-check"> Address proof
+                </label>
+                <label class="check-row">
+                    <input type="checkbox" class="ready-check"> Income certificate
+                </label>
+                <label class="check-row">
+                    <input type="checkbox" class="ready-check"> Bank account details
+                </label>
+                <label class="check-row">
+                    <input type="checkbox" class="ready-check"> Relevant education or category certificate
+                </label>
+
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+                <p id="progressText">0 of 5 checklist items ready</p>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about-section" id="about">
+            <div class="about-content reveal">
+                <span class="section-label">09 / ABOUT LABHSETU</span>
+                <h2>Making public benefits easier for <span>everyone.</span></h2>
+                <p>
+                    LabhSetu bridges the gap between government benefits
+                    and the people who need them. Our mission is to make
+                    information easier to discover, understand and act upon.
+                </p>
+                <a href="#home" class="btn btn-light">Back to top ↑</a>
+            </div>
+        </section>
+
     </main>
+
+    <footer class="footer">
+        <div>
+            <h2>LabhSetu.</h2>
+            <p>Find the benefits meant for you.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#discover">Discover</a>
+            <a href="#features">Features</a>
+            <a href="#verify">Verification</a>
+            <a href="#about">About us</a>
+        </div>
+        <p class="copyright">
+            © 2026 LabhSetu. Independent citizen-benefit discovery platform.
+            Not an official government website.
+        </p>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
     <script src="js/app.js"></script>
 </body>
 </html>
