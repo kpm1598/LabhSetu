@@ -1,96 +1,43 @@
 # LabhSetu
 
-AI-powered Government Scheme Discovery Platform.
+**AI-powered Government Scheme Discovery Platform** — built by **Team Tech Vedas** for the Aarambh hackathon (theme: *AI for the Next Billion*).
 
-LabhSetu helps users describe their situation in plain language and discover
-government schemes they may be eligible for. This repository is the initial
-project structure for a 36-hour hackathon MVP - no features are implemented yet.
+LabhSetu helps citizens discover government schemes they may be eligible for. Instead of reading through dozens of scheme pages, a user simply describes their situation in plain language — and LabhSetu works out which schemes fit, which don't, and what information is still missing.
 
-## Technology Stack
+## How it works
 
-- Frontend: HTML, CSS, Vanilla JavaScript
-- Backend: Python FastAPI
-- Database: SQLite
-- AI: Groq API (backend integration only, added in a later task)
-- Version Control: GitHub
+1. **You describe your situation** in everyday language (English, Hinglish and Kanglish phrasing are understood), e.g. *"I am a 20-year-old BTech student from Karnataka, OBC category, family income is 3 lakh."*
+2. **AI extracts a structured profile** — age, state, course, income, category — using Groq (`gpt-oss-20b`) on the backend only.
+3. **A deterministic rules engine decides** — eligible / not eligible / more information needed. The AI never decides eligibility; every verdict comes from explicit, inspectable rules matched against each scheme's criteria.
+4. **You get a clear answer** — matching schemes with reasons, plus the official source for each scheme.
 
-## Project Structure
+## What's inside
 
-```
-LabhSetu/
-|-- backend/
-|   |-- app/
-|   |   |-- __init__.py
-|   |   |-- main.py
-|   |   |-- database.py
-|   |   |-- models.py
-|   |   |-- routes/
-|   |   `-- services/
-|   |-- tests/
-|   `-- requirements.txt
-|-- frontend/
-|   |-- index.html
-|   |-- css/style.css
-|   |-- js/app.js
-|   `-- assets/
-|-- .env.example
-|-- .gitignore
-`-- README.md
-```
+- **41 real schemes** in the database, researched and verified by the team against their official sources (each scheme records its source and last-verified date), with scheme-expiry handling built in.
+- Structured eligibility criteria (age, income limits, category, course, state) evaluated by the rules engine.
+- Friendly conversation handling — greetings and vague answers get follow-up questions instead of dead ends.
 
-## Windows Setup (PowerShell)
+## Tech stack
 
-Open PowerShell inside the cloned project folder:
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Python, FastAPI
+- **Database:** SQLite
+- **AI:** Groq API (backend only — the key lives in the backend `.env`, never in the browser)
 
-```powershell
-cd C:\Users\patel\Desktop\LabhSetu
-```
-
-### 1. Create a virtual environment (inside the backend folder)
+## Running it locally (Windows)
 
 ```powershell
 cd backend
 py -m venv .venv
-.venv\Scripts\Activate.ps1
+.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-If PowerShell blocks the activation script, run this once and try again:
+Copy `.env.example` to `.env` and add your Groq API key, then start the backend and open the frontend.
 
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
+## Status
 
-### 2. Install dependencies
+Working hackathon product, demoed end-to-end: natural-language profile extraction → rules-based eligibility → explained results across a 41-scheme library.
 
-```powershell
-pip install -r requirements.txt
-```
+## Team
 
-### 3. Configure environment variables (later, when Groq is integrated)
-
-Copy the example file at the project root and fill in your own key.
-Never commit the real `.env` file.
-
-```powershell
-cd ..
-Copy-Item .env.example .env
-```
-
-### 4. Start the backend
-
-```powershell
-cd backend
-.venv\Scripts\Activate.ps1
-uvicorn app.main:app --reload
-```
-
-The API now runs at http://127.0.0.1:8000
-
-- Root: http://127.0.0.1:8000/
-- Health check: http://127.0.0.1:8000/health
-- Interactive docs: http://127.0.0.1:8000/docs
-
-### 5. View the frontend
-
-Open `frontend/index.html` in your browser. Frontend-to-backend
-integration will be added in a later task.
+**Team Tech Vedas** — built for Aarambh, on the theme *AI for the Next Billion*.
